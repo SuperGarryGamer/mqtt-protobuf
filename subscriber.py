@@ -3,9 +3,6 @@ import config as cfg
 import weather_pb2
 import datetime
 
-if __name__ == "__main__":
-    main()
-
 def main():
     mqtt_client = mqtt.Client()
     mqtt_client.on_connect = on_connect
@@ -13,6 +10,9 @@ def main():
 
     mqtt_client.connect(cfg.BROKER_IP, 1883, 60)
     mqtt_client.loop_forever()
+
+if __name__ == "__main__":
+    main()
 
 def on_connect(client, userdata, flags, rc):
     print(f"Connected to {cfg.BROKER_IP}, code {str(rc)}")
