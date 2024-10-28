@@ -3,6 +3,9 @@ import config as cfg
 import weather_pb2
 import datetime
 
+if __name__ == "__main__":
+    main()
+
 def main():
     mqtt_client = mqtt.Client()
     mqtt_client.on_connect = on_connect
