@@ -22,7 +22,7 @@ def on_message(client, userdata, msg):
 def pretty_print_protobuf(raw: str):
     weather = weather_pb2.Weather()
     weather.ParseFromString(raw)
-    print(datetime.date.fromtimestamp(weather.timestamp).ctime())
+    print(datetime.datetime.fromtimestamp(weather.timestamp).ctime())
     print(f"Temperature: {weather.temp_centicelsius / 100}C")
     print(f"Pressure: {weather.pres_hpa}hPa")
     print(f"Conditions: {weather_pb2.Weather.Descriptor.Name(weather.descriptor)}")
