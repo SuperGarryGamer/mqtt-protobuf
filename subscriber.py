@@ -15,8 +15,7 @@ def on_connect(client, userdata, flags, rc):
     print(f"Connected to {cfg.BROKER_IP}, code {str(rc)}")
 
 def on_message(client, userdata, msg):
-    if msg.topic == "temp":
-        pretty_print_protobuf(msg.content)
+    pretty_print_protobuf(msg.content)
 
 def pretty_print_protobuf(raw: str):
     weather = weather_pb2.Weather()
