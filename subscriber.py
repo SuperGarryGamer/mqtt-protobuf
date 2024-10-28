@@ -11,9 +11,6 @@ def main():
     mqtt_client.connect(cfg.BROKER_IP, 1883, 60)
     mqtt_client.loop_forever()
 
-if __name__ == "__main__":
-    main()
-
 def on_connect(client, userdata, flags, rc):
     print(f"Connected to {cfg.BROKER_IP}, code {str(rc)}")
 
@@ -28,3 +25,6 @@ def pretty_print_protobuf(raw: str):
     print(f"Temperature: {weather.temp_centicelsius / 100}C")
     print(f"Pressure: {weather.pres_hpa}hPa")
     print(f"Conditions: {weather.desciptor}")
+
+if __name__ == "__main__":
+    main()
