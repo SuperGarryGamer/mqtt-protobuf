@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package test;
+
+message Weather {
+    enum Descriptor {
+        SUN = 0;
+        CLOUD = 1;
+        RAIN = 2;
+        THUNDER = 3;
+        SNOW = 4;
+        HAIL = 5;
+        INDESCRIBABLY_BAD = 6;
+    }
+
+    optional int32 timestamp = 1 [default = 0];
+    optional int32 temp_centicelsius = 2 [default = -27315];
+    optional int32 pres_hpa = 3 [default = 0];
+    optional Descriptor descriptor = 4 [default = SUN];
+}
