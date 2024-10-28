@@ -16,7 +16,7 @@ def main():
 def main_loop(client: mqtt.Client):
     client.loop_start()
     for i in range(10):
-        client.publish(topic="temp", payload=fake_weather())
+        client.publish(topic="weather", payload=fake_weather())
         time.sleep(0.5)
     client.loop_stop()
 
